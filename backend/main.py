@@ -9,7 +9,9 @@ from pdf_utils import extract_text_from_pdf, chunk_text, is_probable_resume
 from vector_store import embed_texts, upsert_vectors, seed_coach_qa_if_needed
 from coach_logic import extract_name_from_resume, generate_reply, analyze_resume
 from schema import ChatRequest, ChatResponse
-from config import PINECONE_DIMENSION
+from config import PINECONE_DIMENSION,USE_DB
+import logging
+logger = logging.getLogger(__name__)
 
 # ✅ DB helpers (Postgres via Supabase)
 from db import (
@@ -37,8 +39,12 @@ os.makedirs(UPLOAD_DIR, exist_ok=True)
 
 @app.on_event("startup")
 def startup_event():
-    # Initialize DB tables (sessions, resumes)
-    init_db()
+    if USE_DB:
+        try:
+            init_db()
+            logger.info("DB init successful")
+        except Exception as e:
+            logger.error(f"DB init failed, continuing without DB: {e}")
     # Seed coach Q&A into Pinecone if needed
     seed_coach_qa_if_needed()
 

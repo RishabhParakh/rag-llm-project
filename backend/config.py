@@ -5,6 +5,10 @@ from pinecone import Pinecone, ServerlessSpec
 
 load_dotenv()
 
+
+USE_DB = os.getenv("USE_DB", "true").lower() == "true"
+
+
 # ENV KEYS
 GEMINI_API_KEY = os.environ.get("GEMINI_API_KEY")
 PINECONE_API_KEY = os.environ.get("PINECONE_API_KEY")
