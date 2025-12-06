@@ -4,7 +4,9 @@ import "./App.css";
 import ReactMarkdown from "react-markdown";
 import rehypeRaw from "rehype-raw";
 
-const API_BASE = "http://127.0.0.1:8000"; // change if your backend URL is different
+const API_BASE =
+  import.meta.env.VITE_API_BASE || "http://localhost:8000";
+; // change if your backend URL is different
 
 function App() {
   const [view, setView] = useState("landing"); // "landing" | "chat"
