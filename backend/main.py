@@ -176,7 +176,7 @@ async def upload_resume(file: UploadFile = File(...)):
 
 @app.post("/chat", response_model=ChatResponse)
 async def chat(payload: ChatRequest):
-    from .vector_store import retrieve_texts
+    from vector_store import retrieve_texts
 
     # 1️⃣ No file_id at all -> user never uploaded anything
     if not payload.file_id:
