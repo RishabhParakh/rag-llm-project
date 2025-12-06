@@ -3,7 +3,7 @@
 import os
 from typing import List, Optional
 
-from .config import (
+from config import (
     gemini_client,
     EMBEDDING_MODEL,
     PINECONE_DIMENSION,

@@ -12,7 +12,7 @@ from schema import ChatRequest, ChatResponse
 from config import PINECONE_DIMENSION
 
 # ✅ DB helpers (Postgres via Supabase)
-from .db import (
+from db import (
     init_db,
     save_user_name,
     get_user_name,
