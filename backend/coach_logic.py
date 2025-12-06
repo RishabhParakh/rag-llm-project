@@ -1,7 +1,7 @@
 from typing import List,Dict
 import json
 
-from .config import gemini_client, GENERATION_MODEL
+from config import gemini_client, GENERATION_MODEL
 
 
 

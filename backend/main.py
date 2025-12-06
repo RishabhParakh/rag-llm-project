@@ -5,11 +5,11 @@ import hashlib
 from fastapi import FastAPI, UploadFile, File
 from fastapi.middleware.cors import CORSMiddleware
 
-from .pdf_utils import extract_text_from_pdf, chunk_text, is_probable_resume
-from .vector_store import embed_texts, upsert_vectors, seed_coach_qa_if_needed
-from .coach_logic import extract_name_from_resume, generate_reply, analyze_resume
-from .schema import ChatRequest, ChatResponse
-from .config import PINECONE_DIMENSION
+from pdf_utils import extract_text_from_pdf, chunk_text, is_probable_resume
+from vector_store import embed_texts, upsert_vectors, seed_coach_qa_if_needed
+from coach_logic import extract_name_from_resume, generate_reply, analyze_resume
+from schema import ChatRequest, ChatResponse
+from config import PINECONE_DIMENSION
 
 # ✅ DB helpers (Postgres via Supabase)
 from .db import (
