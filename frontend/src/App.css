@@ -1354,9 +1354,30 @@ body, html {
   }
 
   .made-by {
-    position: static;
-    margin-top: 1.3rem;
+    position: absolute;
+    bottom: 0.7rem;
+    right: 2rem;
+    font-size: 0.78rem;
+    color: #64748b;
+    animation: subtle-fade 3.5s ease-in-out infinite;
+    letter-spacing: 0.12em;
   }
+  
+  .made-by span {
+    color: #cbd5f5;
+    font-weight: 500;
+    text-transform: none;   /* ← THIS is the safest */
+  }
+  
+  /* Mobile */
+  @media (max-width: 640px) {
+    .made-by {
+      position: static;
+      margin-top: 1.8rem;
+      text-align: center;
+    }
+  }
+  
 
   .score-row {
     align-items: flex-start;

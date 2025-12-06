@@ -204,7 +204,7 @@ useEffect(() => {
           {error && <div className="error-text">{error}</div>}
 
           <p className="made-by">
-            made by <span>  Rishabh Parakh</span>
+            made by <span style={{ textTransform: "none" }}>Rishabh Parakh</span>
           </p>
         </div>
       </div>
