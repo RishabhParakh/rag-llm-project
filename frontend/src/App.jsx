@@ -164,7 +164,7 @@ useEffect(() => {
     return (
       <div className={`app app-landing ${theme}`}>
         <div className="landing-card fade-in-up">
-          <div className="landing-badge">RAG · Behavioral Interview Coach</div>
+          <div className="landing-badge">RAG · Resume Insights & Interview Coach</div>
 
           <h1 className="landing-title">
             <span className="landing-title-main">RAG</span>
@@ -172,12 +172,11 @@ useEffect(() => {
           </h1>
 
           <p className="landing-subtitle">
-            Transform your resume into insights and unforgettable stories.
+            Reforge your resume into insights and unforgettable stories.
           </p>
 
           <p className="landing-explainer">
-            Upload your resume as a PDF and get a personal interview coach trained only on
-            your experience and projects.
+          Upload your resume as a PDF and get insights plus a personal interview coach trained only on your experience and projects.
           </p>
 
           <div className="landing-upload-area">
@@ -230,7 +229,7 @@ useEffect(() => {
         <div className="chat-header-left">
           <div className="logo-circle">R</div>
           <div>
-            <div className="header-title">Resume Story Coach</div>
+            <div className="header-title">Resume Coach</div>
             <div className="header-subtitle">
               Personalized interview prep from your own resume.
             </div>
