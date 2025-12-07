@@ -25,7 +25,7 @@ def extract_name_from_resume(text: str) -> str:
     """
 
     try:
-        response = gemini_client.generate_content(
+        response = gemini_client.models.generate_content(
             model=GENERATION_MODEL,
             contents=prompt
         )
