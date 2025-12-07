@@ -1292,7 +1292,6 @@
 }
 
 /* ---------- RESPONSIVE ---------- */
-
 @media (max-width: 640px) {
   .app-landing {
     padding: 1.7rem;
@@ -1349,33 +1348,25 @@
     max-width: 100%;
   }
 
+  /* made-by on mobile: centered under content */
   .made-by {
-    position: absolute;
-    bottom: 0.7rem;
-    right: 2rem;
+    position: static;
+    margin-top: 1.8rem;
+    text-align: center;
     font-size: 0.78rem;
     color: #64748b;
     animation: subtle-fade 3.5s ease-in-out infinite;
     letter-spacing: 0.12em;
   }
-  
+
   .made-by span {
     color: #cbd5f5;
     font-weight: 500;
-    text-transform: none;   /* ← THIS is the safest */
+    text-transform: none;
   }
-  
-  /* Mobile */
-  @media (max-width: 640px) {
-    .made-by {
-      position: static;
-      margin-top: 1.8rem;
-      text-align: center;
-    }
-  }
-  
 
   .score-row {
     align-items: flex-start;
   }
 }
+
