@@ -7,14 +7,41 @@ from config import gemini_client, GENERATION_MODEL
 
 def extract_name_from_resume(text: str) -> str:
     """
-    Very simple heuristic: use the first non-empty line as name.
-    You can improve this later with an LLM call if you want.
+    Extract ONLY the candidate's FIRST NAME using your Gemini setup.
     """
-    for line in text.split("\n"):
-        line = line.strip()
-        if line:
-            return line
-    return "there"
+
+    prompt = f"""
+    From the resume text below, extract ONLY the candidate's FIRST NAME.
+
+    Requirements:
+    - Return only the first name (e.g., "Rishabh", "Emily").
+    - Do NOT return last name.
+    - Do NOT add quotes, punctuation, or extra text.
+    - If multiple names appear, choose the most likely personal first name.
+    - If unsure, return the best guess.
+
+    Resume:
+    {text}
+    """
+
+    try:
+        response = gemini_client.generate_content(
+            model=GENERATION_MODEL,
+            contents=prompt
+        )
+
+        first_name = response.text.strip()
+
+        # Safety fallback if LLM returns empty or irrelevant
+        if not first_name or len(first_name.split()) > 1:
+            first_name = first_name.split()[0] if first_name else "there"
+
+        return first_name
+
+    except Exception as e:
+        print("Gemini first-name extraction failed:", e)
+        return "there"
+
 
 # cache so same resume text -> same analysis while server runs
 _ANALYSIS_CACHE: Dict[int, Dict] = {}
