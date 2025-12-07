@@ -1,9 +1,5 @@
 /* Base layout */
-body, html {
-  margin: 0;
-  padding: 0;
-  overflow: hidden;   /* or just delete the whole block */
-}
+
 
 .app {
   min-height: 100vh;
