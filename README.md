@@ -48,6 +48,19 @@ This project demonstrates how **RAG architecture** can create AI applications th
 
 ---
 
+## 📸 Screenshots
+
+### Landing Page
+![RAGnarok Landing Page](media/RAG%201.png)
+
+### Dark Theme
+![RAGnarok Dark Theme](media/RAG%202.png)
+
+### Light Theme
+![RAGnarok Light Theme](media/RAG%203.png)
+
+---
+
 ## ✨ Features
 
 - **Smart resume detection**
