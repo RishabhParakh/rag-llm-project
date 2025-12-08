@@ -183,6 +183,12 @@ async def chat(payload: ChatRequest):
         return ChatResponse(
             response="Please upload a valid resume in PDF format before we start chatting. 🙂"
         )
+     # 1.5️⃣ If message is ONLY numbers -> treat as typo
+    user_msg = (payload.user_message or "").strip()
+    if user_msg.isdigit():
+        return ChatResponse(
+            response="I think that was a typo — please add some text 🙂"
+        )
 
     # 2️⃣ Try to retrieve resume chunks ONLY for this file_id (no fallback)
     resume_chunks = retrieve_texts(
