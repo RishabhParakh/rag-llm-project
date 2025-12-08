@@ -14,6 +14,40 @@ Under the hood it uses **Gemini**, **Pinecone**, and **Postgres (Supabase)** wit
 
 ---
 
+## 🎯 Problem Statement
+
+### The Challenge
+
+Job seekers face several critical challenges when preparing for interviews:
+
+1. **Generic Interview Prep** – Most interview coaching tools provide cookie-cutter advice that doesn't connect to your unique experience and projects.
+
+2. **Struggling with STAR Stories** – Candidates know they need to tell compelling behavioral stories (Situation, Task, Action, Result), but struggle to extract and structure them from their own work history.
+
+3. **Forgetting Key Details** – Under interview pressure, it's easy to forget important technical details, metrics, or accomplishments from past projects.
+
+4. **Poor Resume Utilization** – Resumes contain valuable information, but candidates often fail to leverage this content effectively during interviews or when crafting their personal narrative.
+
+5. **No Personalized Feedback** – Getting objective, actionable feedback on resume strength, skill gaps, and role fit typically requires expensive career coaches or lengthy self-assessment.
+
+### The Solution
+
+RAGnarok addresses these problems through **context-aware AI coaching** powered by Retrieval-Augmented Generation (RAG):
+
+- **Your Resume as Context** – The AI coach has read and understood your entire work history, so every answer is personalized to YOUR projects and experience.
+
+- **Instant STAR Story Generation** – Transform any bullet point from your resume into 2-3 compelling STAR stories, ready for behavioral interviews.
+
+- **Objective Analysis** – Get an honest assessment of your resume strength (0-100 score), role fit for different positions, experience level, and concrete suggestions for improvement.
+
+- **Always Available** – No scheduling, no expensive hourly rates—practice interview questions and refine your stories 24/7.
+
+- **Smart Retrieval** – The system intelligently retrieves relevant resume chunks and coaching knowledge to give contextual, accurate answers rather than hallucinating generic advice.
+
+This project demonstrates how **RAG architecture** can create AI applications that are grounded in real user data, making them far more valuable than generic chatbots.
+
+---
+
 ## ✨ Features
 
 - **Smart resume detection**
@@ -213,6 +247,33 @@ npm run dev
 ```
 
 Vite will show a URL like `http://localhost:5173`.
+
+---
+
+## 🚀 Deployment
+
+This project is fully deployed on **Render**, including:
+
+- **Backend** → Render Web Service
+- **Frontend** → Render Static Site
+
+Environment variables on Render mirror those from `backend/.env`.
+
+**To deploy your own instance:**
+
+1. **Backend (Web Service)**
+   - Connect your GitHub repo to Render
+   - Set the root directory to `backend/`
+   - Add all environment variables from your `.env` file
+   - Build command: `pip install -r requirements.txt`
+   - Start command: `uvicorn main:app --host 0.0.0.0 --port $PORT`
+
+2. **Frontend (Static Site)**
+   - Create a new Static Site on Render
+   - Set the root directory to `frontend/`
+   - Build command: `npm install && npm run build`
+   - Publish directory: `dist`
+   - Add environment variable: `VITE_API_BASE=https://your-backend-url.onrender.com`
 
 ---
 
