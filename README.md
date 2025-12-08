@@ -1,7 +1,7 @@
 # RAGnarok – AI Resume & Interview Coach (RAG + Gemini + Pinecone)
 
 > Transform your resume into insights and unforgettable stories.
-**🌐<a href="https://ragnarok-4wmo.onrender.com/" target="_blank">🌐 Try it yourself!</a>**
+**<a href="https://ragnarok-4wmo.onrender.com/" target="_blank">🌐 Try it yourself!</a>**
 
 RAGnarok is an AI-powered resume coach.  
 Upload your resume (PDF) and chat with a coach that:
